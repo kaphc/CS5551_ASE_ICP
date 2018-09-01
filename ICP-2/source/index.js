@@ -16,7 +16,7 @@ angular.module('weather', [])
             let filtered_location = location.replace(/(.*)(, USA)/, '$1');
             let table = document.getElementById("weather-table");
             // API call using get method
-            $http.get('http://api.wunderground.com/api/4bbbc25f4f5946dd/hourly/q/' + filtered_location + '/.json')
+            $http.get('http://api.wunderground.com/api/YOUR_API_KEY/hourly/q/' + filtered_location + '/.json')
                 .then(function (response) {
                     for (let res = 0; res < 5; res++) {
                         let weather_result = [];
