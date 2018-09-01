@@ -1,0 +1,26 @@
+#location{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+#get-weather-button{
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+.page-header{
+    text-align: center;
+}
+.form-group{
+    padding-top: 10px;
+}
+#weather-table{
+    padding-top: 10px;
+    text-align: center;
+}
+th{
+    text-align: center;
+}
+body{
+    background-image: url("bg.jpg");
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWhSE1HAi753_M8rcFTfcbBXUQInf8y6c&libraries=places"></script>
+<link rel="stylesheet" href="index.css">
+<script src="index.js"></script>
+<head>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Weather Report</h1>
+    </div>
+    <form>
+        <div class="form-group">
+            <input type="text" class="form-control" id="location" placeholder="Enter Location">
+        </div>
+        <div ng-app="weather" ng-controller="weatherctrl" id="get-weather-button">
+            <button type="button" class="btn btn-primary" ng-click="getWeather()">Get Weather Report</button>
+        </div>
+    </form>
+    <table class="table" id="weather-table">
+        <thead>
+        <tr id="weather-table-header">
+            <th scope="col">Time</th>
+            <th scope="col">Temperature</th>
+            <th scope="col">Weather Condition</th>
+            <th scope="col">Icon</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
