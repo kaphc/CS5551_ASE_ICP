@@ -15,14 +15,17 @@
         <h1>Weather Report</h1>
     </div>
     <form>
+        <!--text field to get input from user-->
         <div class="form-group">
             <input type="text" class="form-control" id="location" placeholder="Enter Location">
         </div>
+        <!--clickable button to hit API end points-->
         <div ng-app="weather" ng-controller="weatherctrl" id="get-weather-button">
             <button type="button" class="btn btn-primary" ng-click="getWeather()">Get Weather Report</button>
         </div>
     </form>
     <table class="table" id="weather-table">
+        <!--table to display weather results from API-->
         <thead>
         <tr id="weather-table-header">
             <th scope="col">Time</th>
