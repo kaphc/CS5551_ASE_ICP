@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet" href="index.css">
+<script src="index.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="index_page">
+    <div class="center_header">
+        <h2 id="header">
+            <img src="fruits.jpg" class="img-circle" width="100" height="100">
+            <b>Nutrition Calculator</b></h2>
+    </div>
+    <div class="center_body">
+        <form>
+            <div class="input-group mb-3">
+                <h3 id="title"><b>KNOW WHAT YOU EAT</b></h3>
+                <p id="description">Find nutritional value of your product here.</p>
+                <div id="text_box">
+                    <input type="text" class="form-control" placeholder="Product Name" id="food_name"
+                           aria-label="Product Name" aria-describedby="basic-addon2">
+                </div>
+                <div class="input-group-append" ng-app="food_details" ng-controller="food_details_control"
+                     id="get_food_details_button">
+                    <button class="btn btn-outline-secondary" type="button"
+                            ng-click="getFoodDetails();playProductName()">Search
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="center_footer">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Calories</div>
+            <div class="panel-body" id="calories"></div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">Serving weight in grams</div>
+            <div class="panel-body" id="serving_weight"></div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
