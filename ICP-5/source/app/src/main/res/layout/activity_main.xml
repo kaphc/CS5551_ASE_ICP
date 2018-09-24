@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="Map"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/button"
         tools:ignore="MissingConstraints" />
 
 </RelativeLayout>
