@@ -13,3 +13,4 @@ choco install -y brackets
 choco install -y nodejs
 #install ionic
 npm install -g cordova ionic
+
