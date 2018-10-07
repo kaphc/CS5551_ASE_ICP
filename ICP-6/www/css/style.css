@@ -1,7 +1,15 @@
 /* Empty. Add your own CSS if you like */
+h4 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
 .line {
-  width: 50%;
-  border-bottom: 1px solid black;
+  width: 60%;
+  border-bottom: 1.5px solid lightgrey;
   position: absolute;
 }
 
@@ -10,26 +18,35 @@
 }
 
 .left_pane {
-  width: 25%;
+  width: 10%;
   float: left;
 }
 
 .middle_pane {
-  width: 50%;
+  width: 80%;
   float: left;
 }
 
+.middle_pane_bottom {
+  width: 100%;
+  float: top;
+  padding: 10%;
+  background-color: white;
+}
+
 .right_pane {
-  width: 25%;
+  width: 10%;
   float: right;
 }
 
 .register_form {
-  padding-top: 100px;
+  background-color: lightgrey;
+  padding-top: 50px;
 }
 
 .login_form {
-  padding-top: 150px;
+  background-color: lightgrey;
+  padding-top: 80px;
 }
 
 *::-webkit-input-placeholder {
@@ -59,10 +76,10 @@ input {
 }
 
 .button_div {
-  text-align: center;
-  padding-top: 25px;
+  width: 100%;
+  padding-top: 15px;
 }
 
-ion-nav-title{
+ion-nav-title {
   text-align: center;
 }

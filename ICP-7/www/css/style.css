@@ -1,0 +1,133 @@
+/* Empty. Add your own CSS if you like */
+
+/* tab-login.html */
+ion-nav-title {
+  text-align: center;
+}
+
+ion-content {
+  background-color: lightgrey;
+}
+
+ion-nav-title {
+  text-align: center;
+}
+
+.login_tab, .register_tab {
+  color: white;
+}
+
+h4 {
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1.5px solid black;
+  position: absolute;
+}
+
+#left_pane {
+  width: 10%;
+  height: 100%;
+  float: left;
+}
+
+#middle_pane {
+  width: 80%;
+  height: 100%;
+  float: left;
+}
+
+#right_pane {
+  width: 10%;
+  height: 100%;
+  float: right;
+}
+
+#login_top_middle_pane {
+  width: 100%;
+  height: 80px;
+  float: top;
+}
+
+#register_top_middle_pane {
+  width: 100%;
+  height: 120px;
+  float: top;
+}
+
+#middle_middle_pane {
+  width: 100%;
+  height: 40%;
+  float: top;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.placeholder-icon {
+  color: black;
+  font-size: large;
+}
+
+#input_username, #input_password {
+  text-align: center;
+}
+
+*::-webkit-input-placeholder {
+  color: grey !important;
+  font-family: cursive;
+
+}
+
+*:-moz-placeholder {
+  color: grey !important;
+}
+
+*:-ms-input-placeholder { /* IE10+ */
+  color: grey !important;
+}
+
+#login_button_div {
+  padding-top: 10px;
+  padding-right: 30%;
+  padding-left: 30%;
+  padding-bottom: 20px;
+}
+
+.strike {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.strike > span {
+  position: relative;
+  display: inline-block;
+}
+
+.strike > span:before,
+.strike > span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9999px;
+  height: 1px;
+  background: black;
+}
+
+.strike > span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+
+.strike > span:after {
+  left: 100%;
+  margin-left: 15px;
+}

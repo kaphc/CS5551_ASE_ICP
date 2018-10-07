@@ -1,0 +1,37 @@
+<ion-view>
+  <ion-nav-title><p align="center" style="color:white; font-family: Century">Register</p></ion-nav-title>
+  <ion-nav-bar class="bar-dark">
+    <ion-content class="padding">
+      <div>
+        <div id="left_pane"><p></p>
+        </div>
+        <div id="middle_pane">
+          <div id="register_top_middle_pane">
+            <p></p>
+          </div>
+          <div id="middle_middle_pane">
+            <div class="list list-inset">
+              <h4 style="font-family: Century"><b>REGISTER HERE</b></h4>
+              <label class="item-input">
+                <i class="icon ion-ios-person placeholder-icon"></i>
+                <input id="input_username" ng-model="username" type="text" placeholder="Username"/>
+              </label>
+              <div class="line"></div>
+              <label class="item-input">
+                <i class="icon ion-lock-combination placeholder-icon"></i>
+                <input id="input_password" ng-model="password" type="password" placeholder="Password"/>
+              </label>
+              <div class="line"></div>
+              <div id="login_button_div">
+                <p style="text-align: center"><button class="button button-block button-dark" ng-click="register(username, password)">
+                  Register
+                </button></p>
+              </div>
+            </div>
+          </div>
+          <div id="right_pane"><p></p>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

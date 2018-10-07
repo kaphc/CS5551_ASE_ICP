@@ -7,19 +7,26 @@
       <p></p>
     </div>
     <div class="middle_pane login_form">
-      <label class=" item-input">
-        <i class="icon ion-ios-person placeholder-icon"></i>
-        <input type="text" placeholder="Username" id="login_username">
-      </label>
-      <div class="line"></div>
-      <label class=" item-input">
-        <i class="icon ion-lock-combination placeholder-icon"></i>
-        <input type="password" placeholder="Password" id="login_password">
-      </label>
-      <div class="line"></div>
-      <div class="button_div">
-        <button class="button button-block button-positive" ng-click="loginAction()"><p
-          style="color:white; font-family: cursive; text-align: center">Login</p></button>
+      <div class="middle_pane_top">
+        <p></p>
+      </div>
+      <div class="middle_pane_bottom">
+        <h4><b>Log in to Your Account</b></h4>
+        <label class=" item-input">
+          <i class="icon ion-ios-person placeholder-icon"></i>
+          <input type="text" placeholder="Username" id="login_username">
+        </label>
+        <div class="line"></div>
+        <label class=" item-input">
+          <i class="icon ion-lock-combination placeholder-icon"></i>
+          <input type="password" placeholder="Password" id="login_password">
+        </label>
+        <div class="line"></div>
+        <div class="button_div">
+          <button class="button button-block button-positive" ng-click="loginAction()"><p
+            style="color:white; font-family: cursive; text-align: center">Login</p></button>
+        </div>
+        <p>Need an account? <a ui-sref="tab.register">Sign Up</a></p>
       </div>
     </div>
     <div class="right_pane">
