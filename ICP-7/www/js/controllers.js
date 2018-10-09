@@ -64,7 +64,7 @@ angular.module('starter.controllers', ["ionic", "ngCordova", "firebase"])
         return fbAuth.$signInWithEmailAndPassword(username,
           password);
       }).then(function (authData) {
-        $scope.showAlert("Registered Sucessfuly !!!!!");
+        $scope.showAlert_success("Registered Sucessfuly !!!!!");
         $state.go("tab.login");
       }).catch(function (error) {
         $scope.showAlert(error);
@@ -75,6 +75,19 @@ angular.module('starter.controllers', ["ionic", "ngCordova", "firebase"])
     $scope.showAlert = function (message) {
       var alertPopup = $ionicPopup.alert({
         title: 'Warning',
+        template: "<p style='text-align: center'>" + message + "</p>",
+        buttons: [
+          {
+            text: '<b>OK</b>',
+            type: 'button-dark',
+          }
+        ]
+      })
+    }
+
+    $scope.showAlert_success = function (message) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Success',
         template: "<p style='text-align: center'>" + message + "</p>",
         buttons: [
           {
