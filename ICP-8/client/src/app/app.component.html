@@ -1,0 +1,10 @@
+<app-header></app-header>
+<div class="container-fulid margin-top-50px">
+    <toaster-container [toasterconfig]="config"></toaster-container>
+  <div class="col-sm-2 padding-lr-0 hidden-xs" *ngIf="authService.loggedIn()">
+    <app-sidemenu></app-sidemenu>
+  </div>
+  <div [ngClass]="{'col-sm-10': authService.loggedIn(), 'col-sm-12': !authService.loggedIn()}" id="contentContainer">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,96 @@
+<div class="row" *ngIf="isList">
+  <div class="col-sm-12">
+    <h2 class="pull-left">Area List</h2>
+    <button class="btn btn-primary pull-right margin-top-20px" type="button" (click)="new()">New</button>
+  </div>
+  <div class="col-sm-3" *ngFor="let area of areas">
+    <div class="border-style" (click)="populate(area)">
+      <p>Name : {{area.name}}</p>
+      <p>Description: {{area.description}}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="!isList">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="pull-left">Area</h2>
+      <button class="btn btn-primary pull-right margin-top-20px" type="button" (click)="back()">Back to List</button>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Area Details</h3>
+    </div>
+    <div class="panel-body">
+      <form>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" [(ngModel)]="area.name" name="name">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label>Description</label>
+              <textarea class="form-control" rows="3" [(ngModel)]="area.description" name="description"></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Lines</h3>
+      </div>
+      <div class="panel-body">
+          <form>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="search" name="search" (input)="onSearchChange($event.target.value)">
+                    <div *ngIf="showResults" id="txtSearch" class="auto-complete-style">
+                      <p *ngFor="let result of searchResults" (click)="selectedItem(result)" class="border-bottom">{{result.name}}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="form-group">
+                    <input type="button" class="form-control btn btn-primary" (click)="addLineToArea(search)" value="Add">
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div>
+              <table class="table">
+                <tr>
+                  <th>Line Name</th>
+                  <th>Delete</th>
+                </tr>
+                <tr *ngFor="let line of area.lines">
+                    <td>{{line.name}}</td>
+                    <td><button type="button" (click)="deleteLine(line)"><i class="fa fa-times" aria-hidden="true"></i></button></td>
+                </tr>
+              </table>
+            </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-sm-2" *ngIf="isNew">
+      <button class="btn btn-primary form-control" type="button" (click)="save()">Save</button>
+    </div>
+    <div class="col-sm-2" *ngIf="!isNew">
+      <button class="btn btn-primary form-control" type="button" (click)="update()">Update</button>
+    </div>
+    <div class="col-sm-2" *ngIf="!isNew">
+      <button class="btn btn-primary form-control" type="button" (click)="delete()">Delete</button>
+    </div>
+    <div class="col-sm-2" *ngIf="isNew">
+      <button class="btn btn-primary form-control" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+
+</div>

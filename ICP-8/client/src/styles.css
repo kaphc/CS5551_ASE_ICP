@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+.margin-bottom-0{
+    margin-bottom: 0!important;
+}
+.padding-lr-0{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+.margin-top-20px{
+    margin-top: 20px;
+
+}
+.border-style{
+    border: 1px solid #d3d3d3;
+    padding: 5px;
+}
+
+.auto-complete-style{
+    z-index: 2;
+    position: absolute;
+    background-color: white;
+    margin-top: 5px;
+    width: 100%;
+    border: 1px solid #d3d3d3;
+    padding: 5px;
+}
+.border-bottom{
+    border-bottom: 1px solid #d3d3d3;
+}
+.margin-top-50px{
+    margin-top: 50px;
+}

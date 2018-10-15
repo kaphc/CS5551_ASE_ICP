@@ -1,0 +1,81 @@
+<nav class="navbar navbar-color margin-bottom-0 hidden-sm hidden-xs navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" *ngIf="authService.loggedIn()" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand img-logo" href="#" (click)="updateMenu('home')"><img src="assets/images/logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar" [ngbCollapse]="isCollapsed">
+      <ul class="nav navbar-nav navbar-left">
+        <li *ngIf="authService.loggedIn() && authService.hasPrevillage('home')" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact : true }" (click)="updateMenu('home')"><a>Home</a></li>
+        <li *ngIf="authService.loggedIn() && authService.hasPrevillage('user')" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact : true }" (click)="updateMenu('user')"><a>User</a></li>
+        <li *ngIf="authService.loggedIn() && authService.hasPrevillage('machine')" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact : true }" (click)="updateMenu('machine')"><a>Machine</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="authService.loggedIn()"><a href="#">{{name}}</a></li>
+        <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">Logout</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+
+<nav class="navbar navbar-color margin-bottom-0 hidden-md hidden-lg">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" *ngIf="authService.loggedIn()" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span class="nav-name">{{name}}</span>
+      <a class="navbar-brand img-logo" href="#"><img src="assets/images/logo.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar" [ngbCollapse]="isCollapsed">
+      <ul class="nav navbar-nav navbar-left">
+        <li *ngIf="authService.loggedIn() && authService.checkPrivilege('home')" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/home']">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li *ngIf="authService.loggedIn() && authService.checkPrivilege('user')" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/user']">User</a></li>
+            <li *ngIf="authService.loggedIn()  && authService.checkPrivilege('usergroup')" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/usergroup']">User group</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Machine
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li *ngIf="authService.loggedIn()  && authService.checkPrivilege('area')" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/area']">Area</a></li>
+            <li *ngIf="authService.loggedIn()  && authService.checkPrivilege('line')" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/line']">Line</a></li>
+            <li *ngIf="authService.loggedIn()  && authService.checkPrivilege('reasons')" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/reasons']">Reasons</a></li>
+            <li *ngIf="authService.loggedIn()  && authService.checkPrivilege('machinegroup')" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/machinegroup']">Machine group</a></li>
+            <li *ngIf="authService.loggedIn()  && authService.checkPrivilege('machine')" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact : true }" (click)="isCollapsed = !isCollapsed"><a [routerLink]="['/machine']">Machine</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">Logout</a></li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>

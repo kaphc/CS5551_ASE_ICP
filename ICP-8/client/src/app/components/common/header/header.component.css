@@ -1,0 +1,39 @@
+.navbar-color{
+    background-color: #00adff;
+    border-color: #00adff;
+}
+.navbar-color .navbar-brand{
+    color: #fff;
+}
+.navbar-color li > a{
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbar-color .navbar-nav > li > a:hover, .navbar-color .navbar-nav > li > a:focus {
+    background-color: transparent;
+    color: #FFF;
+}
+.navbar-color .navbar-toggle .icon-bar{
+    background-color: #fff;
+}
+.img-logo{
+    padding: 0!important;
+}
+
+.img-logo img{
+    width: 60px;
+    height: 30px;
+    margin: 10px; 
+}
+
+.dropdown-menu li a:focus,.dropdown-menu li a:hover{
+    background-color: transparent;
+    color: #FFF;
+}
+
+.nav-name{
+    float: right;
+    color: white;
+    padding: 15px;
+}
