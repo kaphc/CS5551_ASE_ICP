@@ -19,6 +19,7 @@ router.get('/get/:name', (req, res, next) => {
     //console.log(name);
     User.getUserNames(name,(err, data) => {
         res.json(data);
+        res.send(data);
     });
 });
 
@@ -36,8 +37,10 @@ router.post('/create', (req, res, next) =>{
     User.addUser(newUser, (err, user) =>{
         if(err){
             res.json({success : false, msg : "Failed to Add user."});
+            res.send({success : false, msg : "Failed to Add user."});
         }else{
             res.json({success : true, msg : "User Added."});
+            res.send({success : true, msg : "User Added."});
         }
     });
 });
@@ -58,8 +61,10 @@ router.put('/update/:id', function (req, res,next) {
     User.updateUser(id, update, (err, todo) => {
         if (err) {
             res.json({ msg: 'Failed while updating contact', status: 'error' });
+            res.send({ msg: 'Failed while updating contact', status: 'error' });
         } else {
             res.json({ msg: 'new contact added successfully' });
+            res.send({ msg: 'new contact added successfully' });
         }
     });
 });
@@ -69,8 +74,9 @@ router.delete('/delete/:id', (req, res, next) => {
     User.deleteUser(req.params.id,(err, result) => {
         if (err) {
             res.json({ msg: 'Failed while deleting contact', status: 'error',success:false });
+            res.send({ msg: 'Failed while deleting contact', status: 'error',success:false });
         } else {
-            res.json({ msg: 'new contact added successfully' });
+            res.send({ msg: 'new contact added successfully' });
         }
     })
 });

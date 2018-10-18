@@ -4,14 +4,14 @@ const passport = require('passport');
 const Line = require('../../models/machine/line');
 
 //Get
-router.get('/all',passport.authenticate('jwt',{session : false}),  (req, res, next) => {
+router.get('/all',  (req, res, next) => {
     Line.getLines((err, data) => {
         res.json(data);
     });
     //res.send('Redirected to Contant list');
 });
 
-router.get('/get/:name',passport.authenticate('jwt',{session : false}),  (req, res, next) => {
+router.get('/get/:name',  (req, res, next) => {
     var name = req.params.name;
     //console.log(name);
     Line.getLineNames(name,(err, data) => {
@@ -20,7 +20,7 @@ router.get('/get/:name',passport.authenticate('jwt',{session : false}),  (req, r
 });
 
 //Create
-router.post('/create',passport.authenticate('jwt',{session : false}),  (req, res, next) =>{
+router.post('/create',  (req, res, next) =>{
     let newLine = new Line({
         name : req.body.name,
         description : req.body.description

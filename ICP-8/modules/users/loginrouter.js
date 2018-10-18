@@ -40,14 +40,4 @@ router.post('/authenticate', (req, res, next) => {
     });
 });
 
-router.get('/privillages/:id', passport.authenticate('jwt',{session : false}), (req, res, next) =>{
-    User.getUserPrivillages(req.params.id,(err,data)=>{
-        if (err) throw err;
-        res.json({
-            success: true,
-            privillages: data
-        });
-    });
-});
-
 module.exports = router;

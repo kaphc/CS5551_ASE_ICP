@@ -4,15 +4,15 @@ const passport = require('passport');
 const UserGroup = require('../../models/user/usergroup');
 
 //Get
-router.get('/all', passport.authenticate('jwt',{session : false}),(req, res, next) => {
+router.get('/all',(req, res, next) => {
     UserGroup.getUserGroups((err, data) => {
         res.json(data);
+        res.send(data);
     });
-    //res.send('Redirected to Contant list');
 });
 
 //Create
-router.post('/create',passport.authenticate('jwt',{session : false}), (req, res, next) =>{
+router.post('/create', (req, res, next) =>{
     let newUserGroup = new UserGroup({
         name : req.body.name,
         description: req.body.description,
@@ -29,7 +29,7 @@ router.post('/create',passport.authenticate('jwt',{session : false}), (req, res,
 });
 
 //Update
-router.put('/update/:id',passport.authenticate('jwt',{session : false}), function (req, res,next) {
+router.put('/update/:id', function (req, res,next) {
     //console.log( req.body);
     var id = req.params.id;
     var update = { 
@@ -48,7 +48,7 @@ router.put('/update/:id',passport.authenticate('jwt',{session : false}), functio
 });
 
 //Delete
-router.delete('/delete/:id',passport.authenticate('jwt',{session : false}), (req, res, next) => {
+router.delete('/delete/:id', (req, res, next) => {
     UserGroup.deleteUserGroup(req.params.id,(err, result) => {
         if (err) {
             res.json({ msg: 'Failed while deleting contact', status: 'error',success:false });
