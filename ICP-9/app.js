@@ -20,7 +20,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-
 app.listen(port, function(){
     console.log("Server running on localhost: " + port);
 });
