@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+}
+
+.container{
+    width: 100%;
+    padding-top: 25px;
+}
+
+.left_container{
+    width: 10%;
+    float: left;
+}
+
+.right_container{
+    width: 10%;
+    float: right;
+}
+
+.middle_container{
+    width: 80%;
+    float: left;
+}
+
+#search{
+    height: 35px;
+    width: 300px;
+}
