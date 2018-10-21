@@ -14,3 +14,5 @@ ICP-6 - https://github.com/kaphc/CS5551_ASE_ICP/wiki/ICP-6
 ICP-7 - https://github.com/kaphc/CS5551_ASE_ICP/wiki/ICP-7
 
 ICP-8 - https://github.com/kaphc/CS5551_ASE_ICP/wiki/ICP-8
+
+ICP-9 - https://github.com/kaphc/CS5551_ASE_ICP/wiki/ICP-9
