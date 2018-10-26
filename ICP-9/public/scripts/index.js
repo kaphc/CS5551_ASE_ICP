@@ -36,7 +36,7 @@ app.controller('students_control', function ($scope, $http) {
         console.log($scope.formData.course_of_study);
         console.log($scope.formData.major);
         console.log($scope.formData.minor);
-        var req = $http.post('http://localhost:3000/icp_9/student?' +
+        var req = $http.post('icp_9/student?' +
             'class_id=' + class_id + '&' +
             'student_name=' + student_name + '&' +
             'course_of_study=' + course_of_study + '&' +
@@ -51,7 +51,7 @@ app.controller('students_control', function ($scope, $http) {
         if(search === null || search === ""){
             init();
         }
-        var req = $http.get('http://localhost:3000/icp_9/student_by_major/' + search).then(function (response) {
+        var req = $http.get('icp_9/student_by_major/' + search).then(function (response) {
             console.log(response.data);
             students_table = document.getElementById('student_table');
             console.log(students_table.rows.length);
