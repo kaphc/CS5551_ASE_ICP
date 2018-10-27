@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        .home_page{
+            height: 100%;
+            width:100%;
+        }
+
+        .header{
+            height: 20%;
+            width: 100%;
+        }
+        .description{
+            height: 70%;
+            width:70%;
+            float: right;
+            padding-top: 40px;
+
+        }
+        .image{
+            height: 70%;
+            width: 30%;
+            float: left;
+            text-align: center;
+            padding-top: 40px;
+            padding-right: 30px;
+        }
+
+        #search-word{
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+
+        #search-button{
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="home_page">
+    <div class="header">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Lab Assignment 1</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="search-box">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="search" id="search-word">
+                </div>
+                <div ng-app="search-engine" ng-controller="search-engine-ctrl" id="search-button">
+                    <button type="button" class="btn btn-primary"  ng-click="getResult()">Search</button>
+                </div>
+            </form>
+        </div>
+        <div class="body">
+            <div class="image">
+                <table id="image" align="right">
+                </table>
+            </div>
+            <div class="description">
+                <ul class="list-group list-group-flush">
+                    <table class="table" id="information-table">
+                    </table>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-app="login" ng-controller="google-login-ctrl">
+
+    </div>
+</div>
+</body>
+</html>
