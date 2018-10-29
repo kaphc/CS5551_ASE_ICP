@@ -27,4 +27,4 @@ http.createServer( function (request, response) {
     });
 }).listen(5000);
 // Console will print the message
-console.log('Client Server running at http://127.0.0.1:5000/');
+console.log('Server running at http://127.0.0.1:5000/');

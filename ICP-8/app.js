@@ -1,11 +1,7 @@
 'use strict';
 
 angular.module("search-engine", []).controller("search-engine-ctrl", function ($scope, $http) {
-    $scope.init = function(){
-        $scope.username = localStorage.getItem("logged_user");
-    };
-
-    $scope.init();
+    
     $scope.getResult = function () {
         let search_word = document.getElementById("search-word").value;
         let url_part_1 = "https://kgsearch.googleapis.com/v1/entities:search?query=";
