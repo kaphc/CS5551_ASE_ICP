@@ -1,5 +1,5 @@
 {
-  "name": "icp-10",
+  "name": "icp-9-1",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -13,6 +13,6 @@
     "cors": "*",
     "body-parser": "*"
   },
-  "author": "kavin",
+  "author": "Kavin Kumar Arumugam",
   "license": "ISC"
 }

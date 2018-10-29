@@ -8,13 +8,18 @@ var port = process.env.PORT || 3000;
 
 
 const app = express();
+const route = require('./routes/student');
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.use('/icp_9', route);
+
 // for any matching path
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.listen(port, function(){
